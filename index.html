@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="title" content="WildCat Skill Games, Skill-based games Kentucky KY | Prominent Games">
+  <meta name="description" content="WildCatSkill is completely Legal Skill Game in Kentucky (KY), USA. Yes It is legal in Kentucky. We have long history of providing legal games in USA">
+  <meta name="keywords" content="Wildcatskill, Skill Games, Kentucky Skill Games, Skill Games KY, Kentucky, Skill-based games USA 2021, Slot machines, Legal Skill Games, Wild Cat Skill Game">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="Prominent Games">
+
+
+  <title>Slider</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    /* new css */
+
+
+    .games-loop{
+      height: 100vh;
+      overflow:hidden;
+      margin-top:50px;
+      background-image: linear-gradient(#1a003f,#44004b) !important;
+    }
+
+    .games-loop .games-image{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .games-image .card{
+      position: absolute;
+      max-width:300px;
+      /* max-width: 350px; */
+      box-shadow: 0px 0px 10px -3px #000;
+      border-radius:25px;
+    }
+
+    .games-image .card .card-body{
+      padding: 10px !important;
+    }
+
+    .games-image .card img{
+      border-radius:15px;
+    }
+
+    /* .games-loop{
+      height: 100vh;
+      overflow:hidden;
+      margin-top:100px;
+    }
+
+    .games-loop .games-image{
+      position: relative;
+    }
+
+    .games-image .card{
+      position: absolute;
+      max-width: calc(100vh/3.1);
+    }
+
+    .games-col{
+      position: absolute;
+      left:0;
+      top:0;
+      max-height:1000px;
+      animation: games1 18s linear infinite;
+    }
+
+    @keyframes games1 {
+      0%{
+        transform: translate3d(0px,0px,0px)
+      }
+      90%, 100%{
+        transform: translate3d(0px,-100vh,0px)
+      }
+    } */
+
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+    
+    .games{
+    background:url(assets/formbg.jpg);
+    background-repeat:repeat;
+    background-size:auto;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    label.error{
+      left:100px !important;
+      color: red;
+    }
+
+    @media (max-width: 375px) {
+      label.error{
+      left:100px !important;
+      color: red;
+      font-size:12px;
+    }
+    }
+  </style>
+
+
+
+
+
+
+
+</head>
+
+<body class="bg-light pb-0">
+
+  <main class="container-fluid px-0">
+  <section class="games-loop">
+    <div class="container-fluid">
+	
+	<div class="row">
+		<div class="col">
+		
+			<div class="games-image">
+				<div style="height:2500px">&nbsp</div>
+				
+				<div class="card">
+                    <div class="card-body">
+                      <img src="https://unsplash.com/photos/hUNQvwsmxWA" class="img-fluid" />
+                    </div>
+                  </div>
+			</div>
+		
+		</div>
+	</div>
+	
+	
+      <div class="row">
+        <?php 
+          $imageArr=["circus.jpg","combat-zone.jpg","happy-fruits.jpg","lucky-duck.jpg","lucky-night.jpg","mexican-fiesta.jpg","pirates.jpg","sea-world.jpg","spirit-76.jpg"];
+          for($i=1;$i<=5;$i++){
+            ?>
+            <div class="col" id="col<?=$i;?>">
+              <div class="games-image">
+                <div style="height:2500px">&nbsp</div>
+                <?php $r=0; shuffle($imageArr); foreach($imageArr as $imgName){
+                  echo '<div class="card div'.$r.'">
+                    <div class="card-body">
+                      <img src="assets/games/'.$imgName.'" class="img-fluid" />
+                    </div>
+                  </div>';
+                  $r++;
+                }?>
+              </div>
+            </div>
+            <?php
+          }
+        ?>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer class="container py-5">
+    <div class="row" style="text-align: center;">
+      <div class="col">
+        &copy; 2021. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+  
+  <script src="assets/dist/js/jquery.min.js"></script>
+  <script src="assets/dist/js/bootstrap.min.js"></script>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/dist/js/popper.min.js"></script>
+  <script src="assets/dist/js/jquery.validate.js"></script>
+
+  <script>
+  var totalImg=parseInt("<?=count($imageArr);?>");
+  var interval=450;
+  var i=0;
+  var count=totalImg;
+  let vars = [];
+  console.log(totalImg);
+  while (i < totalImg) {
+    vars['col1_imageLoop'+i] = (interval*count);
+    vars['col2_imageLoop'+i] = (interval*count);
+    vars['col3_imageLoop'+i] = (interval*count);
+    vars['col4_imageLoop'+i] = (interval*count);
+    vars['col5_imageLoop'+i] = (interval*count);
+    i++;
+    count--;
+  }
+$(document).ready(function(){
+  //  var i=0;
+  setInterval(function(){ 
+  	test("col1"); 
+  }, 20);
+  setInterval(function(){ 
+  	test("col2"); 
+  }, 26);
+  setInterval(function(){ 
+  	test("col3"); 
+  }, 16);
+  setInterval(function(){ 
+  	test("col4"); 
+  }, 22);
+  setInterval(function(){ 
+  	test("col5"); 
+  }, 15);
+});
+function test(colid){
+  var plus=1;
+  var gap=3150;
+  var k=0;
+  while (k < totalImg) {
+	vars[colid+'_imageLoop'+k]=(vars[colid+'_imageLoop'+k]+plus);
+	if(vars[colid+'_imageLoop'+k]>=gap){
+		vars[colid+'_imageLoop'+k]=0;
+	}
+  	$("#"+colid+" .div"+k).css("transform","translate3d(0px, -"+(vars[colid+'_imageLoop'+k])+"px, 0px)");
+  	k++;
+  }
+}
+
+</script>
+  <script>
+    function CheckFormSubmit() {
+      if ($("#frmEventUser").valid()) {
+        //$('#loading').show();
+      } else {
+        //$('#loading').hide();
+      }
+    }
+
+    function lettersOnly() {
+      var key = event.keyCode;
+      if (key >= 48 && key <= 57) {
+        event.preventDefault();
+      }
+    }
+
+    function isNumberKey(evt) {
+      var charCode = (evt.which) ? evt.which : evt.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+      return true;
+    }
+
+
+    jQuery.validator.addMethod("lettersonly", function (value, element) {
+      return this.optional(element) || /^[a-zA-Z\s]+$/i.test(value);
+    }, "Letters only please");
+    $(document).ready(function () {
+
+      $("#frmEventUser").validate({
+        rules: {
+          firstName: {
+            required: true,
+            maxlength: 30
+          },
+          lastName: {
+            required: true,
+            maxlength: 30
+          },
+          userPhone: {
+            required: false,
+            number: true,
+            maxlength: 15,
+            minlength: 10
+          },
+          userEmail: {
+            required: true,
+            email: true,
+            maxlength: 50
+          },
+          description: {
+            required: true,
+            maxlength: 400
+          }
+        },
+        messages: {
+          firstName: {
+            required: "First name should not be blank.",
+            maxlength: "First name length should not be more than 30"
+          },
+          lastName: {
+            required: "Last name should not be blank.",
+            maxlength: "Last name length should not be more than 30"
+          },
+          userPhone: {
+            required: "Business number should not be blank.",
+            maxlength: "Business number length should not be more than 10",
+            minlength: "Business number length should not be less than 10"
+          },
+          userEmail: {
+            required: "Email should not be blank.",
+            email: "Please enter valid email.",
+            maxlength: "Email length should not be more than 50"
+          },
+          description: {
+            required: "Description should not be blank.",
+            maxlength: "Description length should not be more than 300"
+          }
+        },
+        errorPlacement: function(error, element) {
+          error.insertAfter(element);
+        },
+        submitHandler: function (form) {
+          var url = "process/form_submit.php";
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#frmEventUser").serialize(),
+            beforeSend: function(msg){
+              $("#button_form").prop('disabled', true);
+              $("#button_form").html('Process..');
+            },
+            complete: function(msg,err){
+              $("#button_form").prop('disabled', false);
+              $("#button_form").html('Submit');
+            },            
+            success: function (data) {
+              $("#button_form").prop('disabled', false);
+              $("#button_form").html('Submit');
+              var returnVal = jQuery.parseJSON(data);
+              $("#frmEventUser")[0].reset()
+              if (returnVal.success_msg == '1') {
+                $(".modal-body").html('Your message sent successfully. <br> We\'ll get back to you as soon as possible... ');
+                $('#myModal').modal('show');
+                setTimeout(function(){ location.reload(); }, 1500);
+              } else {
+                $(".modal-body").html('Your message not sent successfully. <br> Please try again. ');
+                $('#myModal').modal('show');
+                setTimeout(function(){ location.reload(); }, 1500);
+                return false;
+              }
+            },
+          });
+        },
+        errorPlacement: function (error, element) {
+          error.insertAfter(element);
+        }
+      });
+    });
+    $(function () {
+      var navMain = $(".navbar-collapse");
+
+      navMain.on("click", "a", null, function () {
+        navMain.removeClass('open');
+      });
+    });
+  </script>
+
+
+
+</body>
+
+</html>
